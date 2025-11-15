@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../src/styles/CardsApp.modules.css";
-import useFetchData from "./component/useFetchData";
 import CharacterCard from "./component/CharacterCard";
+import useFetchData from "./component/useFetchData";
 
 const CardsApp = () => {
   const { Data, Page, setPage, fetchData } = useFetchData();
@@ -31,13 +31,15 @@ const CardsApp = () => {
 
         <p>{Page}</p>
 
-        <button
-          onClick={() => {
-            setPage(Page + 1);
-          }}
-        >
-          Siguiente Pagina
-        </button>
+        {Page < 60 && (
+          <button
+            onClick={() => {
+              setPage(Page + 1);
+            }}
+          >
+            Pagina Anterior
+          </button>
+        )}
       </div>
     </div>
   );
