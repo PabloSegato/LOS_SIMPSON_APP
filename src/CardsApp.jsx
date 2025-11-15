@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import "../src/styles/CardsApp.modules.css";
 import useFetchData from "./component/useFetchData";
+import CharacterCard from "./component/CharacterCard";
 
 const CardsApp = () => {
-  const IMG_URL = "https://cdn.thesimpsonsapi.com/500/character/";
-
   const { Data, Page, setPage, fetchData } = useFetchData();
 
   useEffect(() => {
@@ -13,21 +12,9 @@ const CardsApp = () => {
 
   return (
     <div className="container-cards">
-      <button>Ver Personajes</button>
       <ul>
-        {" "}
         {Data.results?.map((item) => {
-          return (
-            <li key={item.id}>
-              <h1>{item.name}</h1>
-
-              <img src={`${IMG_URL}${item.id}.webp`} alt="" />
-
-              <p>{item.occupation}</p>
-
-              <p>{item.status}</p>
-            </li>
-          );
+          return <CharacterCard item={item} key={item.id} />;
         })}
       </ul>
 
