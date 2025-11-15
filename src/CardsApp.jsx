@@ -30,20 +30,28 @@ const CardsApp = () => {
           );
         })}
       </ul>
-      <button
-        onClick={() => {
-          setPage(Page + 1);
-        }}
-      >
-        Siguiente Pagina
-      </button>
-      <button
-        onClick={() => {
-          setPage(Page - 1);
-        }}
-      >
-        Pagina Anterior
-      </button>
+
+      <div className="CONTAINER_BUTTONS">
+        {Page > 1 && (
+          <button
+            onClick={() => {
+              setPage(Page - 1);
+            }}
+          >
+            Pagina Anterior
+          </button>
+        )}
+
+        <p>{Page}</p>
+
+        <button
+          onClick={() => {
+            setPage(Page + 1);
+          }}
+        >
+          Siguiente Pagina
+        </button>
+      </div>
     </div>
   );
 };
