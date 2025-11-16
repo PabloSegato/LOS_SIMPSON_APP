@@ -10,38 +10,40 @@ const CharacterCard = ({ item }) => {
   };
 
   return (
-    <li key={item.id}>
-      <h1>{item.name}</h1>
+    <ul className="UL_CHARACTER_CARD">
+      <li key={item.id}>
+        <h1>{item.name}</h1>
 
-      <img src={`${IMG_URL}${item.id}.webp`} alt="" />
+        <img src={`${IMG_URL}${item.id}.webp`} alt="" />
 
-      <p>{item.occupation}</p>
+        <p>{item.occupation}</p>
 
-      <p>{item.status}</p>
+        <p>{item.status}</p>
 
-      <button
-        type="button"
-        className="btn btn-info"
-        onClick={handleClickPhrase}
-      >
-        {show ? "Hide Details" : "See More Details"}
-      </button>
-      {show && (
-        <div className="CONTAINER_PHRASES">
-          {item.phrases.length > 0 ? (
-            item.phrases.map((phrase, index) => (
-              <div class="alert alert-primary" role="alert">
-                <p key={index}>{phrase}</p>
+        <button
+          type="button"
+          className="btn btn-info"
+          onClick={handleClickPhrase}
+        >
+          {show ? "Hide Details" : "See More Details"}
+        </button>
+        {show && (
+          <div className="CONTAINER_PHRASES">
+            {item.phrases.length > 0 ? (
+              item.phrases.map((phrase, index) => (
+                <div class="alert alert-primary" role="alert">
+                  <p key={index}>{phrase}</p>
+                </div>
+              ))
+            ) : (
+              <div className="alert alert-warning" role="alert">
+                Doesn`t have phrases!
               </div>
-            ))
-          ) : (
-            <div className="alert alert-warning" role="alert">
-              Doesn`t have phrases!
-            </div>
-          )}
-        </div>
-      )}
-    </li>
+            )}
+          </div>
+        )}
+      </li>
+    </ul>
   );
 };
 

@@ -11,12 +11,10 @@ const CardsApp = () => {
   }, [Page]);
 
   return (
-    <div className="container-cards">
-      <ul>
-        {Data.results?.map((item) => {
-          return <CharacterCard item={item} key={item.id} />;
-        })}
-      </ul>
+    <div className="CONTAINER_CARDS_APP">
+      {Data.results?.map((item) => {
+        return <CharacterCard item={item} key={item.id} />;
+      })}
 
       <div className="CONTAINER_BUTTONS">
         {Page > 1 && (

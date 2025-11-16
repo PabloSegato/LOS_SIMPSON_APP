@@ -1,3 +1,6 @@
+.UL_CHARACTER_CARD {
+  background-color: black;
+}
 .CONTAINER_PHRASES {
   display: flex;
   flex-direction: column;
