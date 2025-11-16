@@ -1,7 +1,7 @@
-import "../src/styles/App.modules.css";
-import CardsApp from "./CardsApp";
-import photo from "../src/assets/banner.jpg";
 import { useState } from "react";
+import "../src/styles/App.modules.css";
+import title from "../src/assets/title.png";
+import CardsApp from "./CardsApp";
 const App = () => {
   const [Show, setShow] = useState(false);
   const [hide, setHide] = useState("Ver Personaje");
@@ -12,9 +12,21 @@ const App = () => {
   };
   return (
     <>
-      <img src={photo} alt="Poster De Los Simpsons" />
-      <button onClick={handleClick}>{hide} </button>
+      <div className="CONTAINER_HEADER">
+        <img src={title} alt="" />
+      </div>
+
+      <button
+        onClick={handleClick}
+        id="SHOW_HIDE_CHARACTERS"
+        className="btn btn-outline-warning"
+      >
+        {hide}
+      </button>
       {Show && <CardsApp />}
+      <footer>
+        &copy; 2025 PNS-Developer. Todos los derechos reservados.{" "}
+      </footer>
     </>
   );
 };
