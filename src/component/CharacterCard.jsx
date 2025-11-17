@@ -10,40 +10,43 @@ const CharacterCard = ({ item }) => {
   };
 
   return (
-    <ul className="UL_CHARACTER_CARD">
-      <li key={item.id}>
-        <h1>{item.name}</h1>
+    <article className="CARDS">
+      <h1>{item.name}</h1>
 
-        <img src={`${IMG_URL}${item.id}.webp`} alt="" />
+      <img src={`${IMG_URL}${item.id}.webp`} alt="" />
 
-        <p>{item.occupation}</p>
+      {item.status === "Alive" ? (
+        <p style={{ fontSize: "22px", color: "green" }}>{item.status}</p>
+      ) : (
+        <p style={{ fontSize: "22px", color: "red" }}>{item.status}</p>
+      )}
 
-        <p>{item.status}</p>
+      <h3>{item.occupation}</h3>
 
-        <button
-          type="button"
-          className="btn btn-info"
-          onClick={handleClickPhrase}
-        >
-          {show ? "Hide Details" : "See More Details"}
-        </button>
-        {show && (
-          <div className="CONTAINER_PHRASES">
-            {item.phrases.length > 0 ? (
-              item.phrases.map((phrase, index) => (
-                <div class="alert alert-primary" role="alert">
-                  <p key={index}>{phrase}</p>
-                </div>
-              ))
-            ) : (
-              <div className="alert alert-warning" role="alert">
-                Doesn`t have phrases!
+      <button
+        type="button"
+        className="btn btn-info"
+        onClick={handleClickPhrase}
+        id="BUTTON_PHRASES"
+      >
+        {show ? "Show Phrases" : "Hide Phrases"}
+      </button>
+      {show && (
+        <div className="CONTAINER_PHRASES">
+          {item.phrases.length > 0 ? (
+            item.phrases.map((phrase, index) => (
+              <div class="alert alert-primary" role="alert">
+                <p key={index}>{phrase}</p>
               </div>
-            )}
-          </div>
-        )}
-      </li>
-    </ul>
+            ))
+          ) : (
+            <div className="alert alert-warning" role="alert">
+              Doesn`t have phrases!
+            </div>
+          )}
+        </div>
+      )}
+    </article>
   );
 };
 

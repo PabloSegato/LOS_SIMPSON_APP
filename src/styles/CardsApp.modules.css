@@ -1,8 +1,8 @@
 .CONTAINER_CARDS_APP {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 15px;
 }
 
 .CONTAINER_BUTTONS {
