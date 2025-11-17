@@ -24,9 +24,7 @@ const App = () => {
         {hide}
       </button>
       {Show && <CardsApp />}
-      <footer>
-        &copy; 2025 PNS-Developer. Todos los derechos reservados.{" "}
-      </footer>
+      <footer>&copy; 2025 PNS-Dev. Todos los derechos reservados. </footer>
     </>
   );
 };

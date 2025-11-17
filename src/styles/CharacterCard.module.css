@@ -30,8 +30,8 @@ article h3 {
   justify-content: center;
 }
 
-article #BUTTON_PHRASES {
-  color: white;
+article button {
+  margin-bottom: 10px !important;
 }
 article img {
   width: 200px;

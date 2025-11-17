@@ -27,7 +27,6 @@ const CharacterCard = ({ item }) => {
         type="button"
         className="btn btn-info"
         onClick={handleClickPhrase}
-        id="BUTTON_PHRASES"
       >
         {show ? "Show Phrases" : "Hide Phrases"}
       </button>
@@ -35,7 +34,7 @@ const CharacterCard = ({ item }) => {
         <div className="CONTAINER_PHRASES">
           {item.phrases.length > 0 ? (
             item.phrases.map((phrase, index) => (
-              <div class="alert alert-primary" role="alert">
+              <div className="alert alert-primary" role="alert">
                 <p key={index}>{phrase}</p>
               </div>
             ))
